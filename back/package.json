@@ -1,8 +1,8 @@
 {
-  "name": "socket-chat-app",
+  "name": "to-do-app",
   "homepage": ".",
   "version": "0.0.1",
-  "description": "a socket.io app",
+  "description": "a to-do list app",
   "license": "ISC",
   "author": "",
   "main": "index.js",

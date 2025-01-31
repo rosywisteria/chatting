@@ -36,6 +36,11 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
+// app.get("/users", async (req, res) => {
+//   const users = await users.find();
+//   res.json(users);
+//   console.log("Users found:", users);
+// });
 
 app.post('/api/findperson', async(req, res) => {
   console.log("finding person endpoint hit:", req.body);
@@ -48,7 +53,6 @@ app.post('/api/findperson', async(req, res) => {
   }
   else{
     res.status(400).json('User does not exist');
-    // console.log("User does not exist", {username})
   }
 });
 
@@ -61,7 +65,6 @@ app.post('/api/login', async(req, res) => {
     return res.json({username});
   } else {
     res.status(400).json('invalid Username or Password');
-    console.log("bye bich");
   }
 });
 
