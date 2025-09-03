@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import io from 'socket.io-client';
 
-const API_URL = process.env.API_URL;
+const API_URL = process.env.REACT_API_URL;
 
 const socket = io.connect(API_URL, {transports: ["websocket"]});
 
