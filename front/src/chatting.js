@@ -9,7 +9,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:50508');
+const API_URL = process.env.API_URL;
+
+const socket = io.connect(API_URL, {transports: ["websocket"]});
 
 //<Text fontWeight="bold" fontSize="sm">{message.sentby}</Text>
 
@@ -25,7 +27,7 @@ function BigChat() {
     useEffect(() => {
       if (!username) return;
       const getConvos = async() => {
-        const response = await fetch(`http://localhost:50508/api/getConvos?username=${username}`)
+        const response = await fetch(`${API_URL}/api/getConvos?username=${username}`)
         if (response.ok) {
           const data = await response.json();
           console.log("convos here:", data);
@@ -41,7 +43,7 @@ function BigChat() {
       setChattingUser(chattingUser);
       setChronologicalMessages([]);
       
-      const response= await fetch("http://localhost:50508/api/getMessages", {
+      const response= await fetch(`${API_URL}/api/getMessages`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({username:username, chattingUser:chattingUser}),
@@ -123,7 +125,7 @@ function BigChat() {
         })
         setSearchInput('');
       } else{
-        const response = await fetch("http://localhost:50508/api/findperson", {
+        const response = await fetch(`${API_URL}/api/findperson`, {
           method: "POST",
           headers: {
             "Accept": "application/json",
