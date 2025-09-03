@@ -203,7 +203,7 @@ function BigChat() {
                   p={3}
                   w="100%"
                   cursor="pointer"
-                  bg={user === currentConvo ? "#c5a5c5" : "#ebe8fc"}
+                  bg={user === currentConvo ? "#AFA9DB" : "#ebe8fc"}
                   borderRadius="md"
                   onClick={() => {
                     setCurrentConvo(user);
