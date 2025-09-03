@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 
@@ -6,8 +8,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const { MongoClient } = require("mongodb");
-const uri =
-  "mongodb+srv://bridge:fjPLHycyl9xPnlST@cluster0.j0ucs.mongodb.net/?retryWrites=true&writeConcern=majority";
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
 const db = client.db("chat");
