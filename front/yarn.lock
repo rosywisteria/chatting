@@ -2142,41 +2142,15 @@
     "@reach/component-component" "^0.1.3"
     "@reach/visually-hidden" "^0.1.4"
 
-"@reach/alert@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@reach/alert/-/alert-0.18.0.tgz"
-  integrity sha512-fGJgdtjts9FlQi5Xzyl4p5m3SEOLxX/TjLsIlPHC6Xkw9BhNcArkJMxeZgmIKZYwZYvDwUjyBWf6aLVSqXazrw==
-  dependencies:
-    "@reach/polymorphic" "0.18.0"
-    "@reach/utils" "0.18.0"
-    "@reach/visually-hidden" "0.18.0"
-
 "@reach/component-component@^0.1.3":
   version "0.1.3"
   resolved "https://registry.npmjs.org/@reach/component-component/-/component-component-0.1.3.tgz"
   integrity sha512-a1USH7L3bEfDdPN4iNZGvMEFuBfkdG+QNybeyDv8RloVFgZYRoM+KGXyy2KOfEnTUM8QWDRSROwaL3+ts5Angg==
 
-"@reach/polymorphic@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@reach/polymorphic/-/polymorphic-0.18.0.tgz"
-  integrity sha512-N9iAjdMbE//6rryZZxAPLRorzDcGBnluf7YQij6XDLiMtfCj1noa7KyLpEc/5XCIB/EwhX3zCluFAwloBKdblA==
-
-"@reach/utils@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@reach/utils/-/utils-0.18.0.tgz"
-  integrity sha512-KdVMdpTgDyK8FzdKO9SCpiibuy/kbv3pwgfXshTI6tEcQT1OOwj7BAksnzGC0rPz0UholwC+AgkqEl3EJX3M1A==
-
 "@reach/visually-hidden@^0.1.4":
   version "0.1.4"
   resolved "https://registry.npmjs.org/@reach/visually-hidden/-/visually-hidden-0.1.4.tgz"
   integrity sha512-QHbzXjflSlCvDd6vJwdwx16mSB+vUCCQMiU/wK/CgVNPibtpEiIbisyxkpZc55DyDFNUIqP91rSUsNae+ogGDQ==
-
-"@reach/visually-hidden@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@reach/visually-hidden/-/visually-hidden-0.18.0.tgz"
-  integrity sha512-NsJ3oeHJtPc6UOeV6MHMuzQ5sl1ouKhW85i3C0S7VM+klxVlYScBZ2J4UVnWB50A2c+evdVpCnld2YeuyYYwBw==
-  dependencies:
-    "@reach/polymorphic" "0.18.0"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
