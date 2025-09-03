@@ -5,11 +5,11 @@
   "description": "a to-do list app",
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "commonjs",
   "scripts": {
     "test": "",
-    "dev": "nodemon server.js"
+    "start": "node server"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.4.0",

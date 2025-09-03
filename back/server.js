@@ -34,14 +34,28 @@ const io = new Server(server, {
 
 app.use(cors());
 app.use(express.json());
+
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
-// app.get("/users", async (req, res) => {
-//   const users = await users.find();
-//   res.json(users);
-//   console.log("Users found:", users);
-// });
+
+app.get('/api/getConvos', async(req, res) => {
+  
+  const username = req.query.username;
+  if (!username){
+    return res.status(400).json({error: "Username is required" });
+  }
+  console.log("user is:", username);
+
+  const sent = await messages_data.distinct("receivedby",{sentby: username});
+  const received = await messages_data.distinct("sentby",{receivedby: username});
+
+  const convos = Array.from(new Set([...sent, ...received]));
+
+  res.json({convos});
+});
+
 
 app.post('/api/findperson', async(req, res) => {
   console.log("finding person endpoint hit:", req.body);
@@ -103,6 +117,7 @@ app.post('/api/getMessages', async(req, res) => {
 
   return res.json({myMessages,theirMessages});
 });
+
 
 io.on('connection', (socket) => {
     console.log('a user connected hereee') 
