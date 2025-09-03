@@ -88,14 +88,20 @@ function Login() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Flex justify="center" align="center" h="100vh">
-                <Stack gap="4" align="flex-start" maxW="sm">
+                <Stack gap="4" align="flex-start" maxW="lg">
                     <Flex>
                     <Tabs.Root key="enclosed"
                     index={SubmitTitle=== "Login" ? 0 : 1} 
                     onChange={(index) => toggleLogin(index === 0 ? "Login" : "Signup")}>
                         <Tabs.List>
-                            <Tabs.Trigger value="Login" onClick={() => toggleLogin("Login")}> Login </Tabs.Trigger>
-                            <Tabs.Trigger value="Signup" onClick={() => toggleLogin("Signup")}> Signup </Tabs.Trigger>
+                            <Tabs.Trigger value="Login" onClick={() => toggleLogin("Login")} 
+                                px="8" py="8"
+                                fontSize="lg" > Login </Tabs.Trigger>
+                            <Tabs.Trigger value="Signup" onClick={() => toggleLogin("Signup")}
+                                px="8" py="8"
+                                fontSize="lg" > Signup </Tabs.Trigger>
+
+
                             <Tabs.Indicator rounded="l2"/>
                         </Tabs.List>
                         <Tabs.Content />
@@ -120,11 +126,12 @@ function Login() {
                     <PasswordInput
                         visible={visible}
                         onVisibleChange={setVisible}
+                        size="lg"
                         {...register("password", { required: "Password is required" })}
                     />
                     </Field>
 
-                    <Button type="submit" >{SubmitTitle}</Button>
+                    <Button type="submit" size="lg">{SubmitTitle}</Button>
                     <Toaster />
                 </Stack>
             </Flex>
