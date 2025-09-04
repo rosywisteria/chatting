@@ -14,7 +14,10 @@ const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:50508";
 
 
-const socket = io.connect(API_URL);
+const socket = io.connect(API_URL ,{
+  transports: ["websocket"],
+  withCredentials: true
+});
 
 function BigChat() {
     const location = useLocation();
@@ -38,10 +41,10 @@ function BigChat() {
           if (response.ok) {
             const data = await response.json();
             console.log("convos here:", data);
+            setMyConvos(data.convos || []);
             if (data.convos.length > 0) {
-            setMyConvos(data.convos);
-            setCurrentConvo(data.convos[0]);
-            getMessages(data.convos[0]);
+              setCurrentConvo(data.convos[0]);
+              getMessages(data.convos[0]);
             }
           }
         } catch (error) {
