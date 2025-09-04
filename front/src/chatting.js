@@ -9,7 +9,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import io from 'socket.io-client';
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://chat-deployment-w81d.onrender.com";
+
 // const API_URL = "https://chatting-3tub.onrender.com";
 // const API_URL = "http://localhost:50508";
 
