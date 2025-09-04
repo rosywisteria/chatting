@@ -38,9 +38,11 @@ function BigChat() {
           if (response.ok) {
             const data = await response.json();
             console.log("convos here:", data);
+            if (data.convos.length > 0) {
             setMyConvos(data.convos);
             setCurrentConvo(data.convos[0]);
             getMessages(data.convos[0]);
+            }
           }
         } catch (error) {
           console.error("Couldn't fetch conversations:", error);
