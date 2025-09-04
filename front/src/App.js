@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route index element={<Login />} />
-          <Route path="messagepage" element={<BigChat />} />
+          <Route path="messaging" element={<BigChat />} />
       </Routes>
     </BrowserRouter>
 

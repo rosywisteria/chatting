@@ -35,7 +35,7 @@ function Login() {
             if (response.ok) {
                 const result = await response.json();
                 console.log("Login successful:", result);
-                navigate("/messagepage", { state: { username: result.username } }); 
+                navigate("/messaging", { state: { username: result.username } }); 
             } else{
                 toaster.create({
                     description: "invalid username or password",
@@ -61,7 +61,7 @@ function Login() {
                     duration: 6000,
                     type: "success",
                   })
-                navigate("/messagepage", { state: { username: result.username } }); 
+                navigate("/messaging", { state: { username: result.username } }); 
                 
             } else {
                 toaster.create({
