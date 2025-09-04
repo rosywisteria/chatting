@@ -14,7 +14,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 // const API_URL = "http://localhost:50508";
 
 
-const socket = io.connect(API_URL, {transports: ["websocket"]});
+const socket = io.connect(API_URL);
 
 function BigChat() {
     const location = useLocation();
