@@ -156,6 +156,11 @@ function BigChat() {
         if (response.ok) {
           const otherperson = await response.json();
           await getMessages(otherperson.username);
+          toaster.create({
+            description: "Chatting with " + otherperson.username,
+            duration: 6000,
+            type: "success"
+          })
           setSearchPeople("hidden");
           setSearchInput('');
 
