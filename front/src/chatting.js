@@ -10,10 +10,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 
 const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = "https://chatting-3tub.onrender.com";
+// const API_URL = "http://localhost:50508";
+
 
 const socket = io.connect(API_URL, {transports: ["websocket"]});
-
-//<Text fontWeight="bold" fontSize="sm">{message.sentby}</Text>
 
 function BigChat() {
     const location = useLocation();
@@ -27,7 +28,13 @@ function BigChat() {
     useEffect(() => {
       if (!username) return;
       const getConvos = async() => {
-        const response = await fetch(`${API_URL}/api/getConvos?username=${username}`)
+        const response = await fetch(`${API_URL}/api/getConvos?username=${username}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: "include"
+        })
         if (response.ok) {
           const data = await response.json();
           console.log("convos here:", data);
@@ -132,6 +139,7 @@ function BigChat() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({username: searchInput}),
+          credentials: "include"
         })
         if (response.ok) {
           const otherperson = await response.json();

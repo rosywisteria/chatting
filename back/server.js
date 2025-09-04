@@ -9,6 +9,7 @@ const cors = require('cors');
 
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGO_URI;
+
 const client = new MongoClient(uri);
 
 const db = client.db("chat");
@@ -33,7 +34,13 @@ const io = new Server(server, {
   }
 });
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
+  methods: ["GET","POST"],
+  credentials: true
+}));
+
+// app.use(cors());
 app.use(express.json());
 
 
