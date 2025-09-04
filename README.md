@@ -1,2 +1,2 @@
-# chat? - the webapp
+# chat?
 https://chatting-3tub.onrender.com/
