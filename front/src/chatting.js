@@ -12,10 +12,6 @@ import io from 'socket.io-client';
 // const API_URL = process.env.REACT_APP_API_URL;
 const API_URL = "https://chat-deployment-w81d.onrender.com";
 
-// const API_URL = "https://chatting-3tub.onrender.com";
-// const API_URL = "http://localhost:50508";
-
-
 const socket = io.connect(API_URL ,{
   transports: ["websocket"],
   withCredentials: true
@@ -163,24 +159,6 @@ function BigChat() {
           })
           setSearchPeople("hidden");
           setSearchInput('');
-
-          // //gets database messages
-          // const getMessages = await fetch("http://localhost:50508/api/getMessages", {
-          //   method: "POST",
-          //   headers: {
-          //     "Accept": "application/json",
-          //     "Content-Type": "application/json",
-          //   },
-          //   body: JSON.stringify({username: username, chattingUser: otherperson.username}),
-          // })
-          // if (getMessages.ok) {
-          //   const {myMessages, theirMessages} = await getMessages.json();
-          //   console.log({myMessages, theirMessages})
-          //   const allMessages = [...myMessages, ...theirMessages];
-          //   const allMessagesSorted = allMessages.sort((a, b) => a.timestamp - b.timestamp);
-          //   setChronologicalMessages(allMessagesSorted);
-          // }
-
           setToVisible("visible");
           setSendMessageEnabled(false);
           setSearchInput('');
