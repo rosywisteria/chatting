@@ -28,16 +28,22 @@ function BigChat() {
     useEffect(() => {
       if (!username) return;
       const getConvos = async() => {
-        const response = await fetch(`${API_URL}/api/getConvos?username=${username}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json"
-          },
-        })
-        if (response.ok) {
-          const data = await response.json();
-          console.log("convos here:", data);
-          setMyConvos(data.convos);
+        try {
+          const response = await fetch(`${API_URL}/api/getConvos?username=${username}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json"
+            },
+          })
+          if (response.ok) {
+            const data = await response.json();
+            console.log("convos here:", data);
+            setMyConvos(data.convos);
+            setCurrentConvo(data.convos[0]);
+            getMessages(data.convos[0]);
+          }
+        } catch (error) {
+          console.error("Couldn't fetch conversations:", error);
         }
       }
       getConvos();
