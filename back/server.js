@@ -11,7 +11,7 @@ const { MongoClient } = require("mongodb");
 const uri = process.env.MONGO_URI;
 
 const client = new MongoClient(uri, {
-  tls: true, tlsAllowInvalidCertificates: false
+  tls: true
 });
 
 const db = client.db("chat");
