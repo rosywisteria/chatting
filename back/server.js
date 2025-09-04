@@ -10,7 +10,9 @@ const cors = require('cors');
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGO_URI;
 
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, {
+  tls: true, tlsAllowInvalidCertificates: false
+});
 
 const db = client.db("chat");
 const users = db.collection("users");

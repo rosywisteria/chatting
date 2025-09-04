@@ -9,7 +9,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "",
-    "start": "node server"
+    "start": "node server.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.4.0",
