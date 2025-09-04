@@ -53,15 +53,22 @@ app.get('/', (req, res) => {
 app.get('/api/getConvos', async(req, res) => {
   
   const username = req.query.username;
+  console.log("🔎 getConvos hit. Username:", username); //
   if (!username){
+    console.log("❌ No username provided"); //
     return res.status(400).json({error: "Username is required" });
   }
   console.log("user is:", username);
-
-  const sent = await messages_data.distinct("receivedby",{sentby: username});
+  try{
+    const sent = await messages_data.distinct("receivedby",{sentby: username});
   const received = await messages_data.distinct("sentby",{receivedby: username});
 
   const convos = Array.from(new Set([...sent, ...received]));
+  } catch (error){
+    console.error("Error fetching conversations:", error);
+    return res.status(500).json({error: "Internal server error"});
+  }
+  
 
   res.json({convos});
 });
