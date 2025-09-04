@@ -34,7 +34,8 @@ const io = new Server(server, {
     origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
     methods: ["GET", "POST"],
     credentials: true
-  }
+  },
+  transports: ["websocket"]
 });
 
 app.use(cors({
@@ -43,7 +44,6 @@ app.use(cors({
   credentials: true
 }));
 
-// app.use(cors());
 app.use(express.json());
 
 
