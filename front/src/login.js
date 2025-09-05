@@ -7,6 +7,7 @@ import { Tabs } from "@chakra-ui/react"
 import { useNavigate } from 'react-router-dom';
 import { Toaster,toaster } from "./components/ui/toaster"
 
+const API_URL = "https://chat-deployment-w81d.onrender.com"
 
 function Login() {
     const {
@@ -23,7 +24,7 @@ function Login() {
             password: data.password,
         }
         if (SubmitTitle === "Submit") {
-            const loginpost = "http://localhost:50508/api/login"
+            const loginpost = `${API_URL}/api/login`;
             const response = await fetch(loginpost, {
                 method: "POST",
                 headers: {
@@ -44,7 +45,7 @@ function Login() {
                   })
             }
         } else {
-            const signuppost = "http://localhost:50508/api/signup";
+            const signuppost = `${API_URL}/api/login`;
             const response = await fetch(signuppost, {
                 method: "POST",
                 headers: {
