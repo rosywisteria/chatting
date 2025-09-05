@@ -30,7 +30,8 @@ run().catch(console.dir);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
+    // origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
+    origin: ["https://chatting-3tub.onrender.com"],
     methods: ["GET", "POST"],
     credentials: true
   },
@@ -38,7 +39,8 @@ const io = new Server(server, {
 });
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
+  // origin: ["http://localhost:3000", "https://chatting-3tub.onrender.com"],
+  origin: ["https://chatting-3tub.onrender.com"],
   methods: ["GET","POST"],
   credentials: true
 }));
