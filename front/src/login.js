@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, Stack, Flex} from "@chakra-ui/react";
+import { Box, Button, Input, Stack, Flex} from "@chakra-ui/react";
 import { Field } from "./components/ui/field"
 import { PasswordInput } from "./components/ui/password-input"
 import { useForm } from "react-hook-form";
@@ -134,6 +134,10 @@ function Login() {
                     <Button type="submit" size="lg">{SubmitTitle}</Button>
                     <Toaster />
                 </Stack>
+                <Box position="absolute" bottom="30px" right="30px" fontSize="lg" color="#F589D8"
+                fontFamily="Charcoal" 
+                > made with &hearts; by rosywisteria
+                </Box>
             </Flex>
       </form>
     )
